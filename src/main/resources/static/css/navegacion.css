@@ -1,0 +1,48 @@
+*{
+    font-family: 'Zen Old Mincho';
+}
+nav{
+    background-color: #F5F5F5;
+    padding: 20px;
+    display: flex;
+    border-top-right-radius: 20px;
+}
+/*ENLACE*/
+nav ul{
+    list-style: none;
+    align-self: center;
+
+}
+
+nav li{
+    display: inline;
+}
+nav a{
+    margin: 0;
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px;
+    transition: all ease 1s;
+    border-left: solid;
+
+}
+nav a:hover{
+    background-color: rgb(206, 203, 203);
+}
+/*Img nav*/
+nav div{
+    width: 10%;
+    margin-left: auto;
+    /* border: solid; */
+    align-self: flex-start;
+}
+nav img{
+    max-width: 100%;
+    border-radius: 100px;
+}
+
+/*PARTE CENTRAL*/
+body{
+    /* background-color: rgba(70, 66, 66, 0.651); */
+    background-color: #03A9F4;
+}

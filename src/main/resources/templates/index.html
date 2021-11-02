@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" th:href="@{/css/navegacion.css}">
+    <link rel="stylesheet" th:href="@{/css/vista_cuadricula.css}">
+    <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a th:href="@{/inicio/home}">Inicio</a></li>
+            <li><a th:href="@{/inicio/form}">Nueva pelicula</a></li>
+            <li><a th:href="@{/inicio/vistalista}">Vista en lista</a></li>
+            <li><a href="">Salir</a></li>
+        </ul>
+        <div>
+            <img th:src="@{/img/img3.jpeg}" alt="">
+        </div>
+    </nav>
+
+    <section class="vista_peliculas">
+
+        <div class="contenedor_peliculas glass" >
+
+
+            <div class="card" th:each="pelicula: ${peliculas}">
+                <img th:src="${pelicula.urlImagen}" alt="">
+                <h4 th:text="${pelicula.titulo}">Venom: Carnage liberado</h4>
+                <p th:text="${pelicula.sinopsis}" style="max-height: 120px; overflow: hidden;">
+                    Lorem ipsum dolor sit amet consectetur,
+                    adipisicing elit. Eius voluptatum veritatis 
+                    earum rerum? Nulla at suscipit esse neque ratione 
+                    soluta dignissimos ullam accusamus. Possimus ipsam 
+                </p>
+                <a href="#" th:text="${pelicula.genero}">Acción/Ciencia ficción</a>
+            </div>
+
+        </div>
+
+        
+
+    </section>
+
+
+</body>
+
+</html>

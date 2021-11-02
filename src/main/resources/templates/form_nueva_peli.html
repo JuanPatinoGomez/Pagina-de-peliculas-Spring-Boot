@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" th:href="@{/css/navegacion.css}" href="../static/css/navegacion.css">
+    <link rel="stylesheet" th:href="@{/css/vista_formulario.css}" href="../static/css/vista_formulario.css">
+    <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a th:href="@{/inicio/home}">Inicio</a></li>
+            <li><a th:href="@{/inicio/form}">Nueva pelicula</a></li>
+            <li><a th:href="@{/inicio/vistalista}">Vista en lista</a></li>
+            <li><a href="">Salir</a></li>
+        </ul>
+        <div>
+            <img th:src="@{/img/img3.jpeg}" alt="">
+        </div>
+    </nav>
+
+    <section class="vista_formulario">
+
+        <div class="contenedor_formulario glass" >
+
+
+            <form method="post" th:action="@{/inicio/nuevapelicula}" th:object="${pelicula}">
+                <table>
+                    <tr>
+                        <td colspan="2"><h3>Nueva pelicula</h3></td>
+                    </tr>
+                    <tr>
+                        <td><label for="titulo">Titulo:</label></td>
+                        <td><input type="text" name="titulo" id="titulo" class="fondoglass" th:field="*{titulo}"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="genero">Genero:</label></td>
+                        <td><input type="text" name="genero" id="genero" class="fondoglass" th:field="*{genero}"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="url-img">Url imagen:</label></td>
+                        <td><input type="text" name="url-img" id="url-img" class="fondoglass" th:field="*{urlImagen}"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><label for="sinopsis">Sinopsis:</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><textarea name="sinopsis" id="sinopsis" cols="72" rows="10" class="fondoglass" th:field="*{sinopsis}"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" value="Enviar"></td>
+                    </tr>
+                </table>
+            </form>
+
+        </div>
+
+        
+
+    </section>
+</body>
+</html>

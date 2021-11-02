@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/navegacion.css}">
+    <link rel="stylesheet" th:href="@{/css/vista_lineal.css}">
+    <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <nav>
+        <ul>
+            <li><a th:href="@{/inicio/home}">Inicio</a></li>
+            <li><a th:href="@{/inicio/form}">Nueva pelicula</a></li>
+            <li><a th:href="@{/inicio/vistalista}">Vista en lista</a></li>
+            <li><a href="">Salir</a></li>
+        </ul>
+        <div>
+            <img th:src="@{/img/img3.jpeg}" alt="">
+        </div>
+    </nav>
+
+
+    <section class="vista_peliculas">
+
+        <div class="contenedor_peliculas">
+            <ul th:each="pelicula : ${peliculas}">
+                <li><img th:src="@{/img/claqueta.png}" alt="" width="40px"></li>
+                <li class="nombrePeli" th:text="${pelicula.titulo}">Nombre pelicula</li>
+                <li class="generoPeli" th:text="${pelicula.genero}">Genero pelicula</li>
+                <li class="accionPeli"><a th:href="@{/inicio/eliminarpeli?id=} + ${pelicula.id}">Eliminar pelicula</a></li>
+            </ul>
+        </div>
+        
+
+    </section>
+
+
+    <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+</body>
+</html>
