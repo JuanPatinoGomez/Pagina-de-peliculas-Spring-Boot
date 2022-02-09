@@ -76,7 +76,7 @@ public class Pelicula {
 	
 	
 	public String formatoArchivo(){
-		return id + "♦" + titulo + "♦" + genero + "♦" + sinopsis + "♦" + urlImagen;
+		return id + "/separacion/" + titulo + "/separacion/" + genero + "/separacion/" + sinopsis + "/separacion/" + urlImagen;
 	}
 	
 

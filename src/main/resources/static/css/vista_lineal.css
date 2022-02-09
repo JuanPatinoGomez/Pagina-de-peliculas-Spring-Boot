@@ -43,11 +43,14 @@ section.vista_peliculas{
 }
 
 .contenedor_peliculas ul .nombrePeli{
-    flex-grow: 2;
+    /* flex-grow: 2; */
+    width: 50%;
+
 }
 
 .contenedor_peliculas ul .generoPeli{
     flex-grow: 1;
+    text-align: center;
 }
 
 .contenedor_peliculas ul:hover{

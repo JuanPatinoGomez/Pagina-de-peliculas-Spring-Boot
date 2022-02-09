@@ -9,7 +9,7 @@
     <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Pelis</title>
 </head>
 <body>
     
@@ -34,7 +34,7 @@
                 <li><img th:src="@{/img/claqueta.png}" alt="" width="40px"></li>
                 <li class="nombrePeli" th:text="${pelicula.titulo}">Nombre pelicula</li>
                 <li class="generoPeli" th:text="${pelicula.genero}">Genero pelicula</li>
-                <li class="accionPeli"><a th:href="@{/inicio/eliminarpeli?id=} + ${pelicula.id}">Eliminar pelicula</a></li>
+                <li class="accionPeli"><a th:href="@{/inicio/eliminarpeli?id=} + ${pelicula.id}"><img th:src="@{/img/eliminar.png}" alt="" width="40px"></a></li>
             </ul>
         </div>
         
@@ -43,5 +43,6 @@
 
 
     <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+    <div>Iconos diseñados por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
 </body>
 </html>

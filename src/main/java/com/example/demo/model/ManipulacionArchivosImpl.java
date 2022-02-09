@@ -19,15 +19,14 @@ public class ManipulacionArchivosImpl implements ManipulacionArchivosI{
 
     Logger log = LoggerFactory.getLogger(ManipulacionArchivosImpl.class);
 
-
     @Override
     public LinkedList<Pelicula> leer() throws ArchivoException {
         
         File file = new File("archivopersistencia.txt"); 
-		//System.out.println(file.getAbsolutePath());
-        //log.info("La direccion en la que busca el archivo" + file.getAbsolutePath());
+		//log.info("La direccion del archivo es: " + file.getAbsolutePath());
 		BufferedReader br = null;
 		FileReader fileReader = null;
+		
 		LinkedList<Pelicula> peliculas = new LinkedList<>();
 		String linea = "";
 		String [] partes;	
@@ -39,22 +38,11 @@ public class ManipulacionArchivosImpl implements ManipulacionArchivosI{
 			br = new BufferedReader(fileReader);
 			
 			while((linea = br.readLine())!= null){
-                // log.info("Linea = " + linea);
-				partes = linea.split("♦");
-				//System.out.println(partes[1] + " " + partes[0] + " " + partes[2] + " " + Integer.parseInt(partes[3]));
+                //log.info("Linea = " + linea);
+				partes = linea.split("/separacion/"); //Divimos el texto del archivo en un array se String
+				
                 pelicula = new Pelicula(Integer.parseInt(partes[0]), partes[1], partes[2], partes[3], partes[4]);
-				// log.info("url:" + partes[4]);
-				/*persona = new Persona();
-				persona.setCedula(partes[2]);
-				persona.setNombre(partes[0]);
-				persona.setApellido(partes[1]);
-				persona.setEdad(Integer.parseInt(partes[3]));
-				Date fechanN = DateUtil.convertirDate(partes[4]);
-				System.out.println(fechanN);
-				String fechaN = DateUtil.convertirFecha(fechanN);
-				System.out.println(fechaN);
-				persona.setFechaNacimiento(fechaN);
-				personas.add(persona);*/
+				
                 peliculas.add(pelicula);
 			}
 			

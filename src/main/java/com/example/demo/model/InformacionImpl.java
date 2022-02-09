@@ -104,6 +104,9 @@ public class InformacionImpl implements InformacionI{
 
 			
 		
+		}else{
+			this.contadorId = this.traerPeliculas().getLast().getId() + 1; 
+			//Se trae el id del ultimo elemento y se le suma uno para cuando se agrege otra pelicula continue la secuencia
 		}
 		
 	}
