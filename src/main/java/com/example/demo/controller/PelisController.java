@@ -16,7 +16,7 @@ import com.example.demo.model.Pelicula;
 
 
 @Controller
-@RequestMapping("/inicio")
+@RequestMapping(path = {"/","/inicio"})
 public class PelisController {
 	
 	private Logger log = LoggerFactory.getLogger(PelisController.class);
@@ -26,7 +26,7 @@ public class PelisController {
 	private InformacionI informacionI;
 
 	
-	@GetMapping("/home")
+	@GetMapping(path = {"/", "/home"})
 	public ModelAndView inicio() {
 		
 		informacionI.peliculasIniciales();
